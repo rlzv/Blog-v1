@@ -1,0 +1,19 @@
+<%- include('partials/header'); -%>
+    <h1>Home</h1>
+    <p>
+        <%= startingHomeContent %>
+    </p>
+    <% posts.forEach(function(post) { %>
+        <!-- post every title and postContent + the ones entered before -->
+        <!-- it prints the values because I used scriptlet tags <%= %> -->
+        <h1>
+            <%= post.title %>
+        </h1>
+        <!-- make the page dynamic, so we can get redirected to a single page on different posts -->
+        <p>
+            <%= post.postContent.substring(0, 100) + "..." %>
+                <a href="/posts/<%= post.title %>">Read More</a>
+        </p>
+        <% }); %>
+
+            <%- include('partials/footer'); -%>
